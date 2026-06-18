@@ -1,0 +1,384 @@
+/* ==========================================
+   GLOBAL & LAYOUT BASICS
+   ========================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* ==========================================
+   PLANET EARTH COORDINATES SECTION
+   ========================================== */
+.coordinates-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 100px 0 120px 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #d0d4dc;
+    background-image: radial-gradient(circle, rgba(40, 48, 62, 0.38) 1px, transparent 1px);
+    background-size: 22px 22px;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.coordinates-section .section-title {
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 100%);
+    backdrop-filter: saturate(120%);
+    -webkit-backdrop-filter: saturate(120%);
+    color: #2c3e5a;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto 25px auto;
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.70);
+    border-bottom: 5px solid #FFCC00;
+    box-shadow: 0 8px 32px rgba(60, 72, 95, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.70);
+    -webkit-text-fill-color: #2c3e5a !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+}
+
+
+.coordinates-section .section-subtitle {
+    color: #555555;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.coordinates-card.premium-dark-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 100%);
+    backdrop-filter: saturate(120%);
+    -webkit-backdrop-filter: saturate(120%);
+    border-radius: 28px;
+    padding: 50px 40px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    isolation: isolate;
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.70);
+    border-left: 1px solid rgba(255, 255, 255, 0.55);
+    border-bottom: 4px solid #FFCC00;
+    box-shadow: 0 8px 32px rgba(60, 72, 95, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.70);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.coordinates-card.premium-dark-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.coordinates-card .globe-column {
+    flex: 0 0 240px;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.earth-track {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(0);
+    /* Atmosphere glow around the globe */
+    box-shadow:
+        0 0 30px 8px rgba(80, 160, 255, 0.15),
+        0 0 60px 15px rgba(80, 160, 255, 0.08),
+        0 0 4px 2px rgba(120, 180, 255, 0.20);
+}
+
+/* Atmospheric shading + specular highlight + terminator shadow */
+.earth-track::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+        /* Specular highlight — sun reflection at top-left */
+        radial-gradient(
+            ellipse 45% 40% at 30% 25%,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(255, 255, 255, 0.05) 40%,
+            transparent 70%
+        ),
+        /* Thin blue atmosphere rim on the sunlit side */
+        radial-gradient(
+            circle at 25% 40%,
+            transparent 48%,
+            rgba(100, 180, 255, 0.18) 52%,
+            rgba(60, 140, 255, 0.08) 56%,
+            transparent 60%
+        ),
+        /* Terminator shadow — dark side of the planet */
+        linear-gradient(
+            -45deg,
+            transparent 30%,
+            rgba(0, 0, 0, 0.15) 50%,
+            rgba(0, 0, 0, 0.50) 75%,
+            rgba(0, 0, 0, 0.70) 100%
+        );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Second overlay for inner depth */
+.earth-track::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow:
+        /* Inner shadow for sphere curvature */
+        inset 0px 8px 20px rgba(255, 255, 255, 0.12),
+        inset 0px -20px 50px 10px rgba(0, 0, 0, 0.55),
+        inset 8px 0px 30px rgba(0, 0, 0, 0.15),
+        inset -15px 0px 40px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    z-index: 3;
+}
+
+#earth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%; 
+    height: 100%;
+    background-color: #0a1628;
+    background-image: url("../assets/images/earth-map.png");
+    background-size: auto 100%; 
+    background-repeat: repeat-x;
+    will-change: transform;
+    animation: spinMap 30s linear infinite;
+    /* Slightly boost the map colors for vibrancy */
+    filter: saturate(1.3) contrast(1.1);
+}
+
+@keyframes spinMap {
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-480px, 0, 0); } 
+}
+
+.coordinates-card .address-column {
+    margin: 0;
+    flex: 0 0 auto;
+    width: auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.coordinates-section .tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(44, 62, 90, 0.85) 0%, rgba(61, 79, 111, 0.75) 100%);
+    backdrop-filter: saturate(120%);
+    -webkit-backdrop-filter: saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 8px 16px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    -webkit-text-fill-color: #ffffff !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    box-shadow: 0 8px 20px rgba(60, 72, 95, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.coordinates-section .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #28a745;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.8);
+    animation: pulse 2s infinite;
+    will-change: box-shadow;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+    70%  { box-shadow: 0 0 0 6px rgba(40, 167, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+.coordinates-section .hq-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #2c3e5a;
+    margin: 0 0 25px 0;
+    letter-spacing: -0.5px;
+    -webkit-text-fill-color: #2c3e5a !important;
+    background: none !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+}
+
+.coordinates-section .modern-address-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.coordinates-section .modern-address-list li {
+    font-size: 1.1rem;
+    color: #2c3e5a;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.3s ease;
+    cursor: default;
+    -webkit-text-fill-color: #2c3e5a !important;
+}
+
+.coordinates-section .modern-address-list li:hover {
+    transform: translateX(8px);
+    color: #3d5a80;
+}
+
+/* THE FIX: FA rendering resets on address icons */
+.coordinates-section .modern-address-list i {
+    color: #3d5a80 !important;
+    -webkit-text-fill-color: #3d5a80 !important;
+    background: none !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coordinates-section .modern-address-list li:hover i {
+    transform: scale(1.2);
+}
+
+@media (max-width: 991px) {
+    .coordinates-card.premium-dark-card {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+        gap: 35px;
+        width: 92%;
+    }
+    .coordinates-card .address-column {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .coordinates-section .modern-address-list li {
+        justify-content: center;
+    }
+}
+
+.astronaut-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 280px;
+    z-index: 0;
+    pointer-events: none;
+    will-change: transform;
+    transform: translateY(-50%) translateZ(0);
+}
+
+.astronaut-wrapper.left  { left: 3%; }
+.astronaut-wrapper.right { right: 3%; }
+
+.lottie-anim {
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+}
+
+.astronaut-wrapper.right .lottie-anim {
+    transform: scaleX(-1);
+}
+
+@media (max-width: 1400px) {
+    .astronaut-wrapper { display: none; }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (MOBILE)
+   ========================================== */
+@media (max-width: 768px) {
+    .coordinates-section .hq-title {
+        font-size: 2rem;
+    }
+    
+    .coordinates-section .section-title {
+        font-size: 1.5rem;
+        padding: 12px 25px;
+    }
+    
+    .coordinates-section .section-subtitle {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+    
+    .coordinates-card .globe-column {
+        flex: 0 0 180px;
+        width: 180px;
+        height: 180px;
+    }
+    
+    .earth-track {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .coordinates-section .modern-address-list li {
+        font-size: 1rem;
+    }
+}
+

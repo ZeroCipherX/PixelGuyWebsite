@@ -1,0 +1,75 @@
+/* ==========================================
+   DECORATIVE 3D ORBS — Behind glass cards
+   Creates depth & proves glass transparency
+   ========================================== */
+
+/* ==========================================
+   BASE ORB STYLE
+   ========================================== */
+.deco-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+}
+
+/* ==========================================
+   ABOUT SECTION — Enhanced existing spheres
+   ========================================== */
+.glass-sphere-1 {
+    background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.95) 0%, transparent 25%),
+        radial-gradient(circle at 35% 30%, #e8ecf2 0%, #c8ced8 25%, #a8b0be 50%, #8892a4 75%, #6b7588 100%);
+    box-shadow:
+        inset -25px -25px 50px rgba(0,0,0,0.30),
+        inset 12px 12px 25px rgba(255,255,255,0.90),
+        0 25px 60px rgba(0,0,0,0.15),
+        0 8px 20px rgba(0,0,0,0.10);
+}
+
+.glass-sphere-2 {
+    background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.90) 0%, transparent 22%),
+        radial-gradient(circle at 35% 30%, #e0e4ec 0%, #c0c8d4 25%, #a0a8b8 50%, #808a9c 75%, #606878 100%);
+    box-shadow:
+        inset -22px -22px 45px rgba(0,0,0,0.30),
+        inset 10px 10px 22px rgba(255,255,255,0.85),
+        0 22px 50px rgba(0,0,0,0.14),
+        0 6px 16px rgba(0,0,0,0.08);
+}
+
+
+/* ==========================================
+   ORB DRIFT ANIMATIONS — Slow organic float
+   ========================================== */
+@keyframes orb-drift-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25%      { transform: translate(12px, -18px) scale(1.02); }
+    50%      { transform: translate(-8px, -30px) scale(0.98); }
+    75%      { transform: translate(15px, -12px) scale(1.01); }
+}
+
+@keyframes orb-drift-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    30%      { transform: translate(-15px, 20px) scale(1.03); }
+    60%      { transform: translate(10px, 25px) scale(0.97); }
+}
+
+@keyframes orb-drift-3 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33%      { transform: translate(18px, -15px) rotate(2deg); }
+    66%      { transform: translate(-12px, 20px) rotate(-2deg); }
+}
+
+/* ==========================================
+   RESPONSIVE — Hide orbs on smaller screens
+   ========================================== */
+@media (max-width: 1100px) {
+    .signals-orb-1, .signals-orb-2,
+    .starmap-orb-1, .starmap-orb-2,
+    .trans-orb-1, .trans-orb-2,
+    .footer-orb-1 {
+        display: none;
+    }
+}

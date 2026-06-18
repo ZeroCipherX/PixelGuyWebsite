@@ -1,0 +1,361 @@
+.about-section {
+    margin-top: 0 !important;
+}
+
+/* ==========================================
+   /* ==========================================
+   ABOUT SECTION (Glass Card + Astronauts)
+   /* ========================================== */
+   /* ========================================== */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 800; 
+    color: #2c3e5a;   
+    margin-bottom: 25px;
+    position: relative; 
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px; 
+    height: 4px; 
+    background-color: #FFCC00; 
+    margin: 15px auto 0 auto; 
+    border-radius: 5px; 
+}
+
+.section-subtitle {
+    color: #555555 !important; /* Perfect contrast for white pages */
+    max-width: 750px;
+    margin: 0 auto 50px auto;
+    font-size: 1.15rem; 
+    line-height: 1.8; 
+    letter-spacing: 0.3px; 
+}
+
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 100px 0 120px 0;
+    background-color: #d0d4dc;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.38) 1px, transparent 1px);
+    background-size: 22px 22px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.about-section-top-fade {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 130px;
+    background: linear-gradient(to bottom, #0b0f19 0%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* About Section Start */
+/* ==========================================
+   THE 3D SPHERES (Pulled inward to sit behind the glass!)
+   ========================================== */
+.glass-sphere-1 {
+    position: absolute;
+    top: -50px;
+    left: -50px; 
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.95) 0%, transparent 22%),
+        radial-gradient(circle at 35% 30%, #e8ecf2 0%, #c8ced8 25%, #a8b0be 50%, #8892a4 75%, #6b7588 100%);
+    box-shadow:
+        inset -30px -30px 60px rgba(0,0,0,0.30),
+        inset 15px 15px 30px rgba(255,255,255,0.90),
+        0 35px 80px rgba(0,0,0,0.15),
+        0 10px 25px rgba(0,0,0,0.10);
+    z-index: 0;
+    animation: orb-drift-2 20s ease-in-out infinite;
+}
+
+.glass-sphere-2 {
+    position: absolute;
+    bottom: -50px;
+    right: -30px; 
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.90) 0%, transparent 20%),
+        radial-gradient(circle at 35% 30%, #e0e4ec 0%, #c0c8d4 25%, #a0a8b8 50%, #808a9c 75%, #606878 100%);
+    box-shadow:
+        inset -28px -28px 55px rgba(0,0,0,0.30),
+        inset 12px 12px 28px rgba(255,255,255,0.85),
+        0 30px 70px rgba(0,0,0,0.14),
+        0 8px 20px rgba(0,0,0,0.08);
+    z-index: 0;
+    animation: orb-drift-3 24s ease-in-out infinite;
+}
+
+/* Make about container glass more translucent so background spheres are visible */
+.about-container {
+    /* Clear glass — no blur, fully transparent */
+    background: linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.07) 40%,
+        rgba(255, 255, 255, 0.02) 100%
+    ) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Reduce the glossy sheen overlay so the globe behind is visible */
+.about-container::after {
+    /* Subtle sheen — glass stays clear */
+    opacity: 0.30 !important;
+    background: 
+        radial-gradient(
+            ellipse 80% 50% at 20% 0%,
+            rgba(255, 255, 255, 0.30) 0%,
+            rgba(255, 255, 255, 0.05) 35%,
+            transparent 65%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.10) 0%,
+            transparent 30%
+        );
+}
+
+/* ==========================================
+   THE REAL GLASS CARD (Ultra-Premium Clear)
+   ========================================== */
+.about-container {
+    position: relative;
+    z-index: 2;   
+    max-width: 950px; 
+    width: 92%; 
+    margin: 30px auto 0 auto; /* nudge card down a bit */
+    padding: 50px 40px;
+
+    border-radius: 40px;
+    overflow: visible;
+
+    display: grid;
+    grid-template-columns: 1fr minmax(400px, 2fr); 
+    gap: 20px;
+    align-items: center;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
+}
+
+.about-container:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+
+/* ==========================================
+   ASTRONAUTS
+   ========================================== */
+.bg-astro-left, .bg-astro-right {
+    position: absolute;
+    top: 50%;
+    width: 220px;
+    z-index: 3;
+    opacity: 0.9;
+    pointer-events: none;
+}
+.bg-astro-left { left: 2vw; transform: translateY(-50%); }
+.bg-astro-right { right: 2vw; transform: translateY(-50%) scaleX(-1); }
+.bg-astro-left svg, .bg-astro-right svg { overflow: visible; width: 100%; height: auto; }
+.bg-astro-left *[id], .bg-astro-right *[id] { transform-box: fill-box; }
+
+@media (max-width: 1400px) {
+    .bg-astro-left, .bg-astro-right { display: none; }
+}
+
+/* ==========================================
+   LOGO
+   ========================================== */
+.about-image-col {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -30px;
+}
+
+.about-image-col::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 15px;
+    background: radial-gradient(ellipse at center, rgba(255,204,0,0.3) 0%, transparent 70%);
+    filter: blur(4px);
+    z-index: 0;
+    animation: shadow-pulse 6s ease-in-out infinite;
+}
+
+.about-large-logo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.25));
+    animation: float 6s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+@keyframes shadow-pulse {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    50%       { transform: translateX(-50%) scale(0.7); opacity: 0.4; }
+}
+
+/* ==========================================
+   SVG ANIMATIONS
+   ========================================== */
+#astro { overflow: visible; width: 100%; height: auto; }
+#astro *[id] { transform-box: fill-box; }
+#foreground { --bob-distance: 8px; animation: bob 5s ease-in-out infinite alternate; }
+#helmet { --rock-angle: 10deg; animation: rock 5s ease infinite alternate; transform-origin: 50% 50%; }
+#armHolding { --rock-angle: 10deg; animation: rock 3s ease-in-out infinite alternate; transform-origin: 10% 15%; }
+#armRight { --rock-angle: 10deg; animation: rock 3s ease-in-out infinite alternate; transform-origin: 50% 0%; }
+#fishingPole { --rock-angle: 5deg; animation: rock 2s ease-in-out infinite alternate; transform-origin: 0% 55%; }
+#catch { --rock-angle: -15deg; transform-origin: 50% 0%; animation: rock 2s ease-in-out infinite alternate; }
+#star1, #star2, #star3 { animation: twinkle 10s linear infinite; transform-origin: 50% 50%; }
+#star2 { animation-delay: 1s; }
+#star3 { animation-delay: -3s; }
+
+/* ==========================================
+   TITLE + TYPOGRAPHY
+   ========================================== */
+.modern-dark-title {
+    display: inline-block; 
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 100%);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    color: #2c3e5a !important;
+    padding: 15px 35px !important; 
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.70);
+    border-bottom: 5px solid #FFCC00;
+    box-shadow: 0 8px 32px rgba(60, 72, 95, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.70);
+    margin-top: 0;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.about-text-col { text-align: left; }
+
+.lead-text {
+    font-size: 0.95rem !important;
+    font-weight: 800;
+    color: #2c3e5a !important;
+    border-left: 4px solid #FFCC00;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, rgba(255,204,0,0.15), transparent);
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.about-text-col p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #3d5a80;
+    text-shadow: none;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+}
+
+.about-text-col .tagline {
+    font-size: 1.05rem;
+    font-weight: 900;
+    margin-top: 15px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #2c3e5a 30%, #FFCC00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        padding: 50px 30px;
+        text-align: center;
+        border-radius: 30px;
+        width: 95%;
+        max-width: none;
+    }
+    .about-text-col { text-align: center; }
+    .lead-text {
+        border-left: none;
+        border-top: 4px solid #FFCC00;
+        padding-left: 0;
+        padding-top: 12px;
+        background: linear-gradient(to bottom, rgba(255,204,0,0.1), transparent);
+    }
+    .about-image-col { margin-left: 0; margin-bottom: 30px; }
+    .about-large-logo { max-width: 200px; }
+    .modern-dark-title {
+        font-size: 1.4rem;
+        padding: 12px 25px !important;
+    }
+    .glass-sphere-1 { width: 250px; height: 250px; }
+    .glass-sphere-2 { width: 220px; height: 220px; }
+    .section-title { font-size: 2.2rem; }
+    .section-subtitle { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 35px 20px;
+        border-radius: 24px;
+    }
+    .about-large-logo { max-width: 160px; }
+    .modern-dark-title {
+        font-size: 1.2rem;
+        padding: 10px 18px !important;
+        letter-spacing: 0.5px;
+    }
+    .about-text-col p { font-size: 0.88rem; }
+    .lead-text { font-size: 0.88rem !important; }
+    .glass-sphere-1, .glass-sphere-2 { display: none; }
+}
+
+/* ==========================================
+   KEYFRAMES
+   ========================================== */
+@keyframes twinkle {
+    99%   { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(360deg); }
+}
+@keyframes rock { to { transform: rotateZ(var(--rock-angle)); } }
+@keyframes bob  { to { transform: translateY(var(--bob-distance)); } }

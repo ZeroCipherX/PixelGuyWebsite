@@ -1,0 +1,14 @@
+/* PixelGuy Store — Master stylesheet (imports all section files) */
+
+@import url('global.css');
+@import url('header.css');
+@import url('hero.css');
+@import url('about.css');
+@import url('top-signals.css');
+@import url('star-map.css');
+@import url('coordinates.css');
+@import url('transmission.css');
+@import url('footer.css');
+@import url('section-end-line.css');
+@import url('frosted-glass.css');
+@import url('header-button-match.css');

@@ -1,0 +1,382 @@
+/* ==========================================
+   STAR MAP SECTION
+   ========================================== */
+.star-map-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    padding: 100px 0 120px 0 !important; 
+    text-align: center;
+    background-color: #d0d4dc;
+    background-image: radial-gradient(circle, rgba(40, 48, 62, 0.38) 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+
+.star-map-section .section-title {
+    color: #2c3e5a;
+    -webkit-text-fill-color: #2c3e5a;
+    background: none;
+    font-size: 3.8rem; 
+    font-weight: 900;
+    letter-spacing: -1.5px; 
+    text-shadow: none; 
+    position: relative;
+    z-index: 1;
+    margin-top: 0 !important; 
+    margin-bottom: 10px;
+    transform: translateY(-20px);
+}
+
+.star-map-section .section-title::after {
+    content: '';
+    display: block;
+    margin: 20px auto 40px auto; 
+    width: 100px; 
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #FFCC00, transparent); 
+    box-shadow: none; 
+}
+
+.star-map-section .section-subtitle {
+    color: #555555 !important; 
+    font-size: 1.35rem; 
+    font-weight: 500; 
+    line-height: 1.8; 
+    text-shadow: none;
+    position: relative;
+    z-index: 1;
+    max-width: 900px; 
+    margin: 0 auto 60px auto; 
+}
+
+.social-links-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px; 
+    margin-top: 50px;
+    perspective: 1000px;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes starmap-float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-16px); } 
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: starmap-float 4s ease-in-out infinite;
+    cursor: pointer;
+    isolation: isolate;
+}
+
+.social-item:nth-child(1) { animation-delay: 0.0s; }
+.social-item:nth-child(2) { animation-delay: 0.4s; }
+.social-item:nth-child(3) { animation-delay: 0.8s; }
+.social-item:nth-child(4) { animation-delay: 1.2s; }
+.social-item:nth-child(5) { animation-delay: 1.6s; }
+.social-item:nth-child(6) { animation-delay: 2.0s; }
+
+/* ==========================================
+   STAR MAP ICONS
+   ========================================== */
+.social-icon.glass-card {
+    width: 110px; 
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 100%);
+    backdrop-filter: saturate(120%);
+    -webkit-backdrop-filter: saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.50) !important; 
+    border-top: 1.5px solid rgba(255, 255, 255, 0.70) !important; 
+    border-bottom: 4px solid #FFCC00 !important;
+    box-shadow: 0 8px 32px rgba(60, 72, 95, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.70);
+    font-size: 45px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: visible;
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-item:hover .social-icon.glass-card {
+    transform: translateY(-10px); 
+    box-shadow: 0 16px 48px rgba(60, 72, 95, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.85); 
+    border-color: rgba(255, 255, 255, 0.65) !important; 
+}
+
+/* ==========================================
+   THE CRITICAL FIX: FA rendering resets on every icon.
+   Without these 4 lines, -webkit-text-fill-color from gradient
+   rules bleeds into FA's ::before pseudo-element = rectangle glyphs.
+   ========================================== */
+.social-icon.glass-card i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    line-height: 1;
+    /* FA RENDERING RESETS — do not remove */
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-icon.glass-card i,
+.social-icon.glass-card img,
+.social-icon.glass-card svg {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-item:hover .social-icon.glass-card i,
+.social-item:hover .social-icon.glass-card img,
+.social-item:hover .social-icon.glass-card svg {
+    transform: scale(1.12) translateY(-5px); 
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+}
+
+/* Kill default browser link colors */
+.social-item a, 
+.social-item a:visited,
+.social-item a:focus,
+.social-item a:active {
+    text-decoration: none !important;
+    outline: none !important;
+    color: inherit;
+}
+
+/* ==========================================
+   BRAND ICON COLORS
+   ========================================== */
+
+/* Amazon */
+.social-item .fa-amazon, 
+.social-item i[class*="amazon"] { 
+    background: linear-gradient(to bottom, #2c3e5a 68%, #FF9900 68%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* eBay */
+.social-item .fa-ebay, 
+.social-item i[class*="ebay"] { 
+    background: linear-gradient(to right, #e53238 27%, #0064d2 27%, #0064d2 50%, #f5af02 50%, #f5af02 75%, #86b817 75%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Walmart */
+.social-item .fa-walmart, 
+.social-item i[class*="walmart"],
+.social-item i[class*="store"] { 
+    color: #c4da1a !important;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Facebook */
+.social-item .fa-facebook,
+.social-item .fa-facebook-f,
+.social-item i[class*="facebook"] { 
+    color: #1877F2 !important;
+    -webkit-text-fill-color: #1877F2 !important;
+    background: none !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Instagram */
+.social-item .fa-instagram,
+.social-item i[class*="instagram"] { 
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* TikTok */
+.social-item .fa-tiktok,
+.social-item i[class*="tiktok"] { 
+    color: #2c3e5a !important;
+    -webkit-text-fill-color: #2c3e5a !important;
+    background: none !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    text-shadow: 1.5px 1.5px 0px #ff0050, -1.5px -1.5px 0px #00f2fe !important;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================
+   LABEL PILLS
+   ========================================== */
+.social-label {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 12px 28px; 
+    border-radius: 50px; 
+    background-color: #505a6e;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    border: none;
+    font-size: 0.85rem; 
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.social-item:hover .social-label {
+    background: #FFCC00 !important; 
+    color: #0b0f19 !important;
+    -webkit-text-fill-color: #0b0f19 !important;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   ROTATING MOON
+   ========================================== */
+.starmap-moon-container {
+    position: absolute;
+    top: 62%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 0; 
+    opacity: 0.50; 
+    mix-blend-mode: multiply;
+    pointer-events: none; 
+}
+
+.glowing-moon {
+    height: 600px;
+    width: 600px;
+    box-shadow: none; 
+    background-image: 
+        linear-gradient(to bottom, transparent 65%, rgba(0,0,0,0.15) 100%),
+        url("https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_poles_1k.jpg");
+    background-size: 100% 100%, 2200px; 
+    background-position: center, left;
+    background-repeat: no-repeat, no-repeat;
+    animation: moon-spin-animation 90s linear infinite;
+    background-color: transparent; 
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 65%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 65%);
+    filter: grayscale(100%);
+}
+
+@keyframes moon-spin-animation {
+    to { background-position: center, right; }
+}
+
+/* Star Map standalone title (no dependency on about.css) */
+.star-map-section .modern-dark-title {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 100%);
+    backdrop-filter: saturate(120%);
+    -webkit-backdrop-filter: saturate(120%);
+    color: #2c3e5a !important;
+    padding: 15px 35px !important; 
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.70);
+    border-bottom: 5px solid #FFCC00;
+    box-shadow: 0 8px 32px rgba(60, 72, 95, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.70);
+    margin-top: 0;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================== */
+@media (max-width: 992px) {
+    .social-links-grid {
+        gap: 40px;
+    }
+    .star-map-section .section-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-links-grid {
+        gap: 20px;
+    }
+    
+    .social-icon.glass-card {
+        width: 80px; 
+        height: 80px;
+        font-size: 35px;
+    }
+    
+    .social-icon.glass-card i {
+        font-size: 35px;
+    }
+    
+    .social-label {
+        font-size: 0.75rem;
+        padding: 8px 20px;
+    }
+    
+    .star-map-section .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .star-map-section .section-subtitle {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+    
+    .star-map-section .modern-dark-title {
+        font-size: 1.5rem;
+        padding: 12px 25px !important;
+    }
+}
+

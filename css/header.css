@@ -1,0 +1,250 @@
+/* ==========================================
+   HEADER & NAVIGATION (Perfectly Wrapped Pill)
+   ========================================== */
+.main-header {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: max-content; 
+    max-width: 95%; 
+    
+    border-radius: 50px;
+
+    background: linear-gradient(135deg, rgba(15, 20, 35, 0.35), rgba(5, 8, 15, 0.15));
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.35); 
+    
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    padding: 6px 35px;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.main-header:hover {
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, rgba(15, 20, 35, 0.45), rgba(5, 8, 15, 0.25)); 
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px; 
+    width: 100%;
+}
+
+/* ==========================================
+   THE LOGO
+   ========================================== */
+.logo-link {
+    display: flex;
+    align-items: center;
+    outline: none !important; 
+    border: none !important;
+}
+
+.logo-image {
+    height: 42px; 
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));
+}
+
+.logo-image:hover {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/* ==========================================
+   THE NAVIGATION LINKS
+   ========================================== */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 0.95rem; 
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 10px 16px; 
+    border-radius: 50px;
+    white-space: nowrap; 
+    display: inline-block;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.main-nav a:hover {
+    color: #0b0f19;
+    background-color: #FFCC00;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px);
+    text-shadow: none; 
+}
+
+/* ==========================================
+   MOBILE MENU TOGGLE BUTTON
+   ========================================== */
+.mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    outline: none;
+    padding: 8px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.mobile-menu-toggle:hover {
+    color: #FFCC00;
+    transform: scale(1.1);
+}
+
+/* Hidden on desktop */
+.nav-overflow {
+    display: none;
+}
+
+/* ==========================================
+   RESPONSIVE: TABLET
+   ========================================== */
+@media (max-width: 1200px) {
+    .nav-container { gap: 15px; }
+    .main-nav ul { gap: 8px; }
+    .main-nav a { font-size: 0.8rem; padding: 8px 12px; }
+}
+
+/* ==========================================
+   RESPONSIVE: MOBILE (PARTIAL INLINE + DROPDOWN)
+   ========================================== */
+@media (max-width: 850px) {
+    .main-header {
+        width: 95%;
+        max-width: 95%;
+        padding: 8px 15px;
+        top: 12px;
+        border-radius: 50px;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+    }
+
+    .logo-image {
+        height: 34px;
+    }
+
+    /* Show the toggle button */
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: 3; /* Push toggle to the far right */
+    }
+
+    .main-nav {
+        order: 2;
+        display: flex;
+        align-items: center;
+        width: auto;
+        overflow: visible;
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 4px;
+        align-items: center;
+    }
+
+    /* Show first 2 items inline */
+    .main-nav li {
+        display: none;
+    }
+
+    .main-nav li:nth-child(1),
+    .main-nav li:nth-child(2) {
+        display: block;
+    }
+
+    .main-nav a {
+        font-size: 0.7rem;
+        padding: 8px 12px;
+        white-space: nowrap;
+    }
+
+    /* ---- The dropdown for remaining items ---- */
+    .nav-overflow {
+        position: absolute;
+        top: calc(100% + 15px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 92vw;
+        max-width: 400px;
+        background: linear-gradient(165deg, rgba(255, 255, 255, 0.75) 0%, rgba(220, 225, 235, 0.85) 100%);
+        backdrop-filter: blur(30px) saturate(150%);
+        -webkit-backdrop-filter: blur(30px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.60);
+        border-top: 1.5px solid rgba(255, 255, 255, 0.80);
+        border-radius: 24px;
+        padding: 15px 10px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        box-shadow: 0 15px 40px rgba(60, 72, 95, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-overflow.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .nav-overflow a {
+        display: block;
+        text-decoration: none;
+        color: #2c3e5a;
+        font-weight: 900;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        padding: 16px 20px;
+        text-align: center;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        text-shadow: none;
+    }
+
+    .nav-overflow a:hover {
+        background-color: #FFCC00;
+        color: #0b0f19;
+    }
+}

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelGuy Store</title>
+
+    <!-- FIXED: Upgraded from Font Awesome 5 to Font Awesome 6 -->
+    <!-- FA5 was missing fa-tiktok entirely. FA6 has all brand icons. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/top-signals.css">
+    <link rel="stylesheet" href="css/star-map.css">
+    <link rel="stylesheet" href="css/coordinates.css">
+    <link rel="stylesheet" href="css/transmission.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/section-end-line.css">
+    <link rel="stylesheet" href="css/frosted-glass.css">
+    <link rel="stylesheet" href="css/header-button-match.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- ========================================== -->
+    <!-- HEADER SECTION                             -->
+    <!-- ========================================== -->
+    <header class="main-header">
+        <div class="container nav-container">
+
+            <a href="#" class="logo-link">
+                <img src="assets/images/logo.png" alt="PixelGuy Logo" class="logo-image">
+            </a>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Who Is This Guy?</a></li>
+                    <li><a href="#signals">Top Signals</a></li>
+                    <li><a href="#star-map">Star Map</a></li>
+                    <li><a href="#coordinates">Planet Earth Coordinates</a></li>
+                    <li><a href="#transmission">Send A Transmission</a></li>
+                </ul>
+            </nav>
+
+            <!-- Overflow dropdown for mobile (items 3-6) -->
+            <div class="nav-overflow">
+                <a href="#signals">Top Signals</a>
+                <a href="#star-map">Star Map</a>
+                <a href="#coordinates">Planet Earth Coordinates</a>
+                <a href="#transmission">Send A Transmission</a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- HERO / SLIDE 1 SECTION                     -->
+    <!-- ========================================== -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h1>One Stop One Guy</h1>
+            <p class="hero-desc">They say we sell aliens, superheroes, or intergalactic gadgets here....they are wrong.
+            </p>
+            <p class="hero-subdesc">Not Yet</p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- WHO IS THIS GUY? (ABOUT SECTION)           -->
+    <!-- ========================================== -->
+    <section class="about-section" id="about">
+
+        <div class="bg-astro-left">
+            <svg id="astro" width="100%" height="100%" viewBox="0 0 80 80" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="astronaut">
+                    <g id="stars">
+                        <g id="star1">
+                            <path id="Vector"
+                                d="M48.2759 16.5517C47.5141 16.5517 46.8965 15.9342 46.8965 15.1724V9.65516C46.8965 8.89339 47.5141 8.27585 48.2759 8.27585C49.0376 8.27585 49.6552 8.89339 49.6552 9.65516V15.1724C49.6552 15.9342 49.0376 16.5517 48.2759 16.5517Z"
+                                fill="#F0C419" />
+                            <path id="Vector_2"
+                                d="M51.0345 13.7931H45.5172C44.7555 13.7931 44.1379 13.1756 44.1379 12.4138C44.1379 11.652 44.7555 11.0345 45.5172 11.0345H51.0345C51.7963 11.0345 52.4138 11.652 52.4138 12.4138C52.4138 13.1756 51.7963 13.7931 51.0345 13.7931Z"
+                                fill="#F0C419" />
+                        </g>
+                        <g id="star3">
+                            <path id="Vector_3"
+                                d="M56.5517 45.5173C55.79 45.5173 55.1724 44.8997 55.1724 44.1379V38.6207C55.1724 37.8589 55.79 37.2414 56.5517 37.2414C57.3135 37.2414 57.931 37.8589 57.931 38.6207V44.1379C57.931 44.8997 57.3135 45.5173 56.5517 45.5173Z"
+                                fill="#F0C419" />
+                            <path id="Vector_4"
+                                d="M59.3103 42.7586H53.7931C53.0313 42.7586 52.4138 42.1411 52.4138 41.3793C52.4138 40.6175 53.0313 40 53.7931 40H59.3103C60.0721 40 60.6896 40.6175 60.6896 41.3793C60.6896 42.1411 60.0721 42.7586 59.3103 42.7586Z"
+                                fill="#F0C419" />
+                        </g>
+                        <g id="star2">
+                            <path id="Vector_5"
+                                d="M73.1034 8.27586C72.3417 8.27586 71.7241 7.65832 71.7241 6.89655V1.37931C71.7241 0.617538 72.3417 0 73.1034 0C73.8652 0 74.4827 0.617538 74.4827 1.37931V6.89655C74.4827 7.65832 73.8652 8.27586 73.1034 8.27586Z"
+                                fill="#F0C419" />
+                            <path id="Vector_6"
+                                d="M75.8621 5.51723H70.3448C69.5831 5.51723 68.9655 4.89969 68.9655 4.13792C68.9655 3.37614 69.5831 2.75861 70.3448 2.75861H75.8621C76.6238 2.75861 77.2414 3.37614 77.2414 4.13792C77.2414 4.89969 76.6238 5.51723 75.8621 5.51723Z"
+                                fill="#F0C419" />
+                        </g>
+                    </g>
+                    <g id="foreground">
+                        <path id="pack"
+                            d="M6.34483 46.4C4.9764 45.8571 3.99945 44.628 3.77932 43.1724L0.537938 21.531C0.228894 19.476 1.49198 17.5105 3.48966 16.9379L13.1448 13.7931L12.4138 48.4276C10.3102 48.0225 8.2695 47.3407 6.34483 46.4Z"
+                            fill="#2C3E50" />
+                        <g id="moonLarge">
+                            <g id="moonLarge_2">
+                                <path id="Oval"
+                                    d="M21.3793 80C31.6632 80 40 71.6632 40 61.3793C40 51.0954 31.6632 42.7586 21.3793 42.7586C11.0954 42.7586 2.75861 51.0954 2.75861 61.3793C2.75861 71.6632 11.0954 80 21.3793 80Z"
+                                    fill="#95A5A5" />
+                            </g>
+                            <path id="Vector_7"
+                                d="M17.931 74.4828C20.2163 74.4828 22.069 72.6301 22.069 70.3448C22.069 68.0595 20.2163 66.2069 17.931 66.2069C15.6457 66.2069 13.7931 68.0595 13.7931 70.3448C13.7931 72.6301 15.6457 74.4828 17.931 74.4828Z"
+                                fill="#7F8C8D" />
+                            <path id="Vector_8"
+                                d="M37.3517 70.9655C35.3973 74.191 32.5121 76.7492 29.0759 78.3034C27.0495 76.0181 27.2595 72.5229 29.5448 70.4965C31.8301 68.4702 35.3254 68.6802 37.3517 70.9655Z"
+                                fill="#7F8C8D" />
+                            <path id="Vector_9"
+                                d="M12.4138 58.6207C12.4111 60.8714 11.1903 62.9443 9.22323 64.038C7.25618 65.1318 4.85116 65.075 2.93792 63.8896C2.39037 59.9833 3.11074 56.0043 4.99309 52.5379C6.81538 52.1745 8.70462 52.6467 10.1417 53.8247C11.5788 55.0027 12.4125 56.7625 12.4138 58.6207V58.6207Z"
+                                fill="#7F8C8D" />
+                        </g>
+                        <path id="shadow"
+                            d="M38.6207 54.3448C38.6207 57.7793 38.7862 58.8 38.1379 60.0966C37.5921 61.2514 36.6073 62.1401 35.4027 62.5649C34.1981 62.9898 32.8737 62.9155 31.7241 62.3586C30.0495 61.5569 28.9787 59.8704 28.9655 58.0138V60.6897C28.9972 63.0069 27.4045 65.0308 25.1448 65.5448C23.7103 65.8562 22.2121 65.4961 21.0758 64.5667C19.9396 63.6373 19.2895 62.2402 19.3103 60.7724V51.8207C19.3292 51.1715 18.8927 50.597 18.2621 50.4414C11.1862 48.6897 11.8621 48.869 11.5724 48.7586C10.6765 48.454 9.8899 47.8928 9.31033 47.1448C13.8681 43.2825 20.0013 41.8396 25.803 43.2648C31.6046 44.6899 36.3712 48.8104 38.6207 54.3448V54.3448Z"
+                            fill="#7F8C8D" />
+                        <g id="body">
+                            <path id="Vector_10"
+                                d="M38.6207 42.069C38.6207 56.731 38.8 56.5517 38.1379 57.931C37.5946 59.0883 36.6109 59.9801 35.406 60.4076C34.2012 60.8351 32.8754 60.7628 31.7241 60.2069C30.0495 59.4052 28.9787 57.7187 28.9655 55.8621V58.4828C28.9972 60.8 27.4045 62.8239 25.1448 63.3379C23.7198 63.6471 22.2315 63.2937 21.0976 62.3769C19.9637 61.4602 19.3064 60.0788 19.3103 58.6207V49.6552C19.3292 49.0059 18.8927 48.4315 18.2621 48.2759C11.269 46.5931 11.8621 46.7586 11.5724 46.6483C9.61138 45.9703 8.29055 44.13 8.27585 42.0552V26.9793L30.0414 25.4345L37.3931 38.8552C38.1853 39.738 38.6226 40.8828 38.6207 42.069Z"
+                                fill="#35495E" />
+                            <path id="Vector_11"
+                                d="M31.7241 42.7586V60.2069C30.0403 59.4157 28.9653 57.7226 28.9655 55.8621C28.9655 41.3379 29.1448 42.069 28.4552 40.9517C28.1029 40.5321 28.0324 39.9437 28.2756 39.4527C28.5189 38.9617 29.0297 38.6612 29.577 38.6872C30.1243 38.7131 30.6044 39.0606 30.8 39.5724C31.3927 40.5304 31.7123 41.6322 31.7241 42.7586V42.7586Z"
+                                fill="#2C3E50" />
+                        </g>
+                        <path id="armRight"
+                            d="M27.5862 29.3103C30.869 36.5517 27.9724 37.5862 29.2966 40.4414C31.0207 44.2207 39.669 44.5793 37.2 31.8897C36.7448 29.5172 35.9172 26.1103 34 24.469L27.5862 29.3103Z"
+                            fill="#3F5C6C" />
+                        <g id="armHolding">
+                            <g id="fishingPole">
+                                <g id="catch">
+                                    <path id="lineLeft"
+                                        d="M55.3448 53.5119C54.8787 53.5135 54.4433 53.2796 54.1873 52.89C53.9313 52.5005 53.8894 52.008 54.0759 51.5808L62.2414 33.0567V16.6291C62.2414 15.8673 62.8589 15.2498 63.6207 15.2498C64.3825 15.2498 65 15.8673 65 16.6291C65 34.8084 65 33.5119 64.8896 33.8981L56.6138 52.6567C56.4022 53.1718 55.9016 53.5091 55.3448 53.5119V53.5119Z"
+                                        fill="#9FC9D3" />
+                                    <path id="lineRight"
+                                        d="M71.8965 53.5119C71.3464 53.5138 70.8477 53.1885 70.6276 52.6843L62.3517 33.8981C62.1862 33.5256 62.2414 34.9601 62.2414 16.6291C62.2414 15.8673 62.8589 15.2498 63.6207 15.2498C64.3825 15.2498 65 15.8673 65 16.6291V33.0567L73.1655 51.5808C73.352 52.008 73.31 52.5005 73.054 52.89C72.7981 53.2796 72.3627 53.5135 71.8965 53.5119V53.5119Z"
+                                        fill="#9FC9D3" />
+                                    <g id="moonSmall">
+                                        <path id="Vector_12"
+                                            d="M63.6207 71.967C70.4767 71.967 76.0345 66.4092 76.0345 59.5532C76.0345 52.6973 70.4767 47.1394 63.6207 47.1394C56.7648 47.1394 51.2069 52.6973 51.2069 59.5532C51.2069 66.4092 56.7648 71.967 63.6207 71.967Z"
+                                            fill="#95A5A5" />
+                                        <path id="Vector_13"
+                                            d="M58.7931 63.5256C60.6975 63.5256 62.2414 61.9818 62.2414 60.0774C62.2414 58.1729 60.6975 56.6291 58.7931 56.6291C56.8887 56.6291 55.3448 58.1729 55.3448 60.0774C55.3448 61.9818 56.8887 63.5256 58.7931 63.5256Z"
+                                            fill="#7F8C8D" />
+                                        <path id="Vector_14"
+                                            d="M75.9242 61.1394C75.4429 64.8556 73.3089 68.1555 70.1173 70.1188C67.935 69.3841 66.4385 67.3714 66.3634 65.07C66.2882 62.7686 67.6502 60.6626 69.7798 59.7871C71.9095 58.9115 74.3589 59.4507 75.9242 61.1394Z"
+                                            fill="#7F8C8D" />
+                                        <path id="Vector_15"
+                                            d="M69.1379 49.0429C68.934 51.1307 67.0903 52.6671 65 52.4912C61.8552 52.4912 59.8414 49.7325 61.4 47.3325C64.0042 46.86 66.6912 47.2321 69.069 48.3946C69.109 48.6086 69.132 48.8253 69.1379 49.0429Z"
+                                            fill="#7F8C8D" />
+                                    </g>
+                                </g>
+                                <path id="pole"
+                                    d="M25 44.3808C27.6621 41.3877 31.5241 37.167 34.1862 34.7256C41.4276 28.0222 53.7172 18.6153 68.3517 15.4153C69.7608 15.0205 70.6165 13.594 70.3013 12.1649C69.9862 10.7359 68.61 9.80155 67.1655 10.036C54.5172 12.7946 39.5793 20.7118 25.5517 35.5394C25.3567 35.7167 25.1724 35.9056 25 36.1049V44.3808Z"
+                                    fill="#A56A43" />
+                            </g>
+                            <path id="armLeft"
+                                d="M8.88275 22.6621C8.34482 23.5586 8.35861 23.9586 7.95861 26.4C7.06171 31.775 9.77499 37.1064 14.6483 39.5448C23.6138 44.0138 23.5448 44.1379 24.8276 44.1379C26.3225 44.1367 27.7005 43.3292 28.4323 42.0257C29.1642 40.7221 29.136 39.1252 28.3586 37.8483C27.531 36.469 26.4965 36.2207 23.0759 34.4966L18.3586 32.1379C17.1767 31.5495 16.3466 30.4324 16.1241 29.131L8.88275 22.6621Z"
+                                fill="#3F5C6C" />
+                        </g>
+                        <g id="helmet">
+                            <path id="helmetBase"
+                                d="M6.89655 15.1724C6.89655 23.5519 13.6895 30.3448 22.069 30.3448C30.4485 30.3448 37.2414 23.5519 37.2414 15.1724C37.2414 6.79292 30.4485 0 22.069 0C13.6895 0 6.89655 6.79292 6.89655 15.1724Z"
+                                fill="#547580" />
+                            <g id="visor">
+                                <path id="visor Base"
+                                    d="M35.3241 22.5517C29.6414 26.1103 21.0759 25.4069 16.5517 21.1035C9.87587 14.8 15.9724 5.51724 26.8966 5.51724C29.863 5.47493 32.7822 6.26325 35.3241 7.79311C37.878 12.3812 37.878 17.9636 35.3241 22.5517Z"
+                                    fill="#F0C419" />
+                                <path id="visorShine"
+                                    d="M33.1034 16.5517C32.3417 16.5517 31.7241 15.9342 31.7241 15.1724C31.7241 11.0345 26.4276 11.0345 26.2069 11.0345C25.4451 11.0345 24.8276 10.4169 24.8276 9.65516C24.8276 8.89339 25.4451 8.27585 26.2069 8.27585C29.0759 8.27585 34.4827 9.72412 34.4827 15.1724C34.4827 15.9342 33.8652 16.5517 33.1034 16.5517Z"
+                                    fill="#F9EAB0" />
+                                <path id="visorShadow"
+                                    d="M36.6759 19.3104C36.3485 20.4512 35.8854 21.5487 35.2965 22.5793C31.2387 24.9404 26.3809 25.5051 21.8896 24.1379C14.869 22.0138 11.8758 16 14.9931 11.1448C19.3793 16.2621 26.4138 21.1173 36.6759 19.3104Z"
+                                    fill="#F29C1F" />
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="bg-astro-right">
+            <svg id="astro" width="100%" height="100%" viewBox="0 0 80 80" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="astronaut">
+                    <g id="stars">
+                        <g id="star1">
+                            <path id="Vector"
+                                d="M48.2759 16.5517C47.5141 16.5517 46.8965 15.9342 46.8965 15.1724V9.65516C46.8965 8.89339 47.5141 8.27585 48.2759 8.27585C49.0376 8.27585 49.6552 8.89339 49.6552 9.65516V15.1724C49.6552 15.9342 49.0376 16.5517 48.2759 16.5517Z"
+                                fill="#F0C419" />
+                            <path id="Vector_2"
+                                d="M51.0345 13.7931H45.5172C44.7555 13.7931 44.1379 13.1756 44.1379 12.4138C44.1379 11.652 44.7555 11.0345 45.5172 11.0345H51.0345C51.7963 11.0345 52.4138 11.652 52.4138 12.4138C52.4138 13.1756 51.7963 13.7931 51.0345 13.7931Z"
+                                fill="#F0C419" />
+                        </g>
+                        <g id="star3">
+                            <path id="Vector_3"
+                                d="M56.5517 45.5173C55.79 45.5173 55.1724 44.8997 55.1724 44.1379V38.6207C55.1724 37.8589 55.79 37.2414 56.5517 37.2414C57.3135 37.2414 57.931 37.8589 57.931 38.6207V44.1379C57.931 44.8997 57.3135 45.5173 56.5517 45.5173Z"
+                                fill="#F0C419" />
+                            <path id="Vector_4"
+                                d="M59.3103 42.7586H53.7931C53.0313 42.7586 52.4138 42.1411 52.4138 41.3793C52.4138 40.6175 53.0313 40 53.7931 40H59.3103C60.0721 40 60.6896 40.6175 60.6896 41.3793C60.6896 42.1411 60.0721 42.7586 59.3103 42.7586Z"
+                                fill="#F0C419" />
+                        </g>
+                        <g id="star2">
+                            <path id="Vector_5"
+                                d="M73.1034 8.27586C72.3417 8.27586 71.7241 7.65832 71.7241 6.89655V1.37931C71.7241 0.617538 72.3417 0 73.1034 0C73.8652 0 74.4827 0.617538 74.4827 1.37931V6.89655C74.4827 7.65832 73.8652 8.27586 73.1034 8.27586Z"
+                                fill="#F0C419" />
+                            <path id="Vector_6"
+                                d="M75.8621 5.51723H70.3448C69.5831 5.51723 68.9655 4.89969 68.9655 4.13792C68.9655 3.37614 69.5831 2.75861 70.3448 2.75861H75.8621C76.6238 2.75861 77.2414 3.37614 77.2414 4.13792C77.2414 4.89969 76.6238 5.51723 75.8621 5.51723Z"
+                                fill="#F0C419" />
+                        </g>
+                    </g>
+                    <g id="foreground">
+                        <path id="pack"
+                            d="M6.34483 46.4C4.9764 45.8571 3.99945 44.628 3.77932 43.1724L0.537938 21.531C0.228894 19.476 1.49198 17.5105 3.48966 16.9379L13.1448 13.7931L12.4138 48.4276C10.3102 48.0225 8.2695 47.3407 6.34483 46.4Z"
+                            fill="#2C3E50" />
+                        <g id="moonLarge">
+                            <g id="moonLarge_2">
+                                <path id="Oval"
+                                    d="M21.3793 80C31.6632 80 40 71.6632 40 61.3793C40 51.0954 31.6632 42.7586 21.3793 42.7586C11.0954 42.7586 2.75861 51.0954 2.75861 61.3793C2.75861 71.6632 11.0954 80 21.3793 80Z"
+                                    fill="#95A5A5" />
+                            </g>
+                            <path id="Vector_7"
+                                d="M17.931 74.4828C20.2163 74.4828 22.069 72.6301 22.069 70.3448C22.069 68.0595 20.2163 66.2069 17.931 66.2069C15.6457 66.2069 13.7931 68.0595 13.7931 70.3448C13.7931 72.6301 15.6457 74.4828 17.931 74.4828Z"
+                                fill="#7F8C8D" />
+                            <path id="Vector_8"
+                                d="M37.3517 70.9655C35.3973 74.191 32.5121 76.7492 29.0759 78.3034C27.0495 76.0181 27.2595 72.5229 29.5448 70.4965C31.8301 68.4702 35.3254 68.6802 37.3517 70.9655Z"
+                                fill="#7F8C8D" />
+                            <path id="Vector_9"
+                                d="M12.4138 58.6207C12.4111 60.8714 11.1903 62.9443 9.22323 64.038C7.25618 65.1318 4.85116 65.075 2.93792 63.8896C2.39037 59.9833 3.11074 56.0043 4.99309 52.5379C6.81538 52.1745 8.70462 52.6467 10.1417 53.8247C11.5788 55.0027 12.4125 56.7625 12.4138 58.6207V58.6207Z"
+                                fill="#7F8C8D" />
+                        </g>
+                        <path id="shadow"
+                            d="M38.6207 54.3448C38.6207 57.7793 38.7862 58.8 38.1379 60.0966C37.5921 61.2514 36.6073 62.1401 35.4027 62.5649C34.1981 62.9898 32.8737 62.9155 31.7241 62.3586C30.0495 61.5569 28.9787 59.8704 28.9655 58.0138V60.6897C28.9972 63.0069 27.4045 65.0308 25.1448 65.5448C23.7103 65.8562 22.2121 65.4961 21.0758 64.5667C19.9396 63.6373 19.2895 62.2402 19.3103 60.7724V51.8207C19.3292 51.1715 18.8927 50.597 18.2621 50.4414C11.1862 48.6897 11.8621 48.869 11.5724 48.7586C10.6765 48.454 9.8899 47.8928 9.31033 47.1448C13.8681 43.2825 20.0013 41.8396 25.803 43.2648C31.6046 44.6899 36.3712 48.8104 38.6207 54.3448V54.3448Z"
+                            fill="#7F8C8D" />
+                        <g id="body">
+                            <path id="Vector_10"
+                                d="M38.6207 42.069C38.6207 56.731 38.8 56.5517 38.1379 57.931C37.5946 59.0883 36.6109 59.9801 35.406 60.4076C34.2012 60.8351 32.8754 60.7628 31.7241 60.2069C30.0495 59.4052 28.9787 57.7187 28.9655 55.8621V58.4828C28.9972 60.8 27.4045 62.8239 25.1448 63.3379C23.7198 63.6471 22.2315 63.2937 21.0976 62.3769C19.9637 61.4602 19.3064 60.0788 19.3103 58.6207V49.6552C19.3292 49.0059 18.8927 48.4315 18.2621 48.2759C11.269 46.5931 11.8621 46.7586 11.5724 46.6483C9.61138 45.9703 8.29055 44.13 8.27585 42.0552V26.9793L30.0414 25.4345L37.3931 38.8552C38.1853 39.738 38.6226 40.8828 38.6207 42.069Z"
+                                fill="#35495E" />
+                            <path id="Vector_11"
+                                d="M31.7241 42.7586V60.2069C30.0403 59.4157 28.9653 57.7226 28.9655 55.8621C28.9655 41.3379 29.1448 42.069 28.4552 40.9517C28.1029 40.5321 28.0324 39.9437 28.2756 39.4527C28.5189 38.9617 29.0297 38.6612 29.577 38.6872C30.1243 38.7131 30.6044 39.0606 30.8 39.5724C31.3927 40.5304 31.7123 41.6322 31.7241 42.7586V42.7586Z"
+                                fill="#2C3E50" />
+                        </g>
+                        <path id="armRight"
+                            d="M27.5862 29.3103C30.869 36.5517 27.9724 37.5862 29.2966 40.4414C31.0207 44.2207 39.669 44.5793 37.2 31.8897C36.7448 29.5172 35.9172 26.1103 34 24.469L27.5862 29.3103Z"
+                            fill="#3F5C6C" />
+                        <g id="armHolding">
+                            <g id="fishingPole">
+                                <g id="catch">
+                                    <path id="lineLeft"
+                                        d="M55.3448 53.5119C54.8787 53.5135 54.4433 53.2796 54.1873 52.89C53.9313 52.5005 53.8894 52.008 54.0759 51.5808L62.2414 33.0567V16.6291C62.2414 15.8673 62.8589 15.2498 63.6207 15.2498C64.3825 15.2498 65 15.8673 65 16.6291C65 34.8084 65 33.5119 64.8896 33.8981L56.6138 52.6567C56.4022 53.1718 55.9016 53.5091 55.3448 53.5119V53.5119Z"
+                                        fill="#9FC9D3" />
+                                    <path id="lineRight"
+                                        d="M71.8965 53.5119C71.3464 53.5138 70.8477 53.1885 70.6276 52.6843L62.3517 33.8981C62.1862 33.5256 62.2414 34.9601 62.2414 16.6291C62.2414 15.8673 62.8589 15.2498 63.6207 15.2498C64.3825 15.2498 65 15.8673 65 16.6291V33.0567L73.1655 51.5808C73.352 52.008 73.31 52.5005 73.054 52.89C72.7981 53.2796 72.3627 53.5135 71.8965 53.5119V53.5119Z"
+                                        fill="#9FC9D3" />
+                                    <g id="moonSmall">
+                                        <path id="Vector_12"
+                                            d="M63.6207 71.967C70.4767 71.967 76.0345 66.4092 76.0345 59.5532C76.0345 52.6973 70.4767 47.1394 63.6207 47.1394C56.7648 47.1394 51.2069 52.6973 51.2069 59.5532C51.2069 66.4092 56.7648 71.967 63.6207 71.967Z"
+                                            fill="#95A5A5" />
+                                        <path id="Vector_13"
+                                            d="M58.7931 63.5256C60.6975 63.5256 62.2414 61.9818 62.2414 60.0774C62.2414 58.1729 60.6975 56.6291 58.7931 56.6291C56.8887 56.6291 55.3448 58.1729 55.3448 60.0774C55.3448 61.9818 56.8887 63.5256 58.7931 63.5256Z"
+                                            fill="#7F8C8D" />
+                                        <path id="Vector_14"
+                                            d="M75.9242 61.1394C75.4429 64.8556 73.3089 68.1555 70.1173 70.1188C67.935 69.3841 66.4385 67.3714 66.3634 65.07C66.2882 62.7686 67.6502 60.6626 69.7798 59.7871C71.9095 58.9115 74.3589 59.4507 75.9242 61.1394Z"
+                                            fill="#7F8C8D" />
+                                        <path id="Vector_15"
+                                            d="M69.1379 49.0429C68.934 51.1307 67.0903 52.6671 65 52.4912C61.8552 52.4912 59.8414 49.7325 61.4 47.3325C64.0042 46.86 66.6912 47.2321 69.069 48.3946C69.109 48.6086 69.132 48.8253 69.1379 49.0429Z"
+                                            fill="#7F8C8D" />
+                                    </g>
+                                </g>
+                                <path id="pole"
+                                    d="M25 44.3808C27.6621 41.3877 31.5241 37.167 34.1862 34.7256C41.4276 28.0222 53.7172 18.6153 68.3517 15.4153C69.7608 15.0205 70.6165 13.594 70.3013 12.1649C69.9862 10.7359 68.61 9.80155 67.1655 10.036C54.5172 12.7946 39.5793 20.7118 25.5517 35.5394C25.3567 35.7167 25.1724 35.9056 25 36.1049V44.3808Z"
+                                    fill="#A56A43" />
+                            </g>
+                            <path id="armLeft"
+                                d="M8.88275 22.6621C8.34482 23.5586 8.35861 23.9586 7.95861 26.4C7.06171 31.775 9.77499 37.1064 14.6483 39.5448C23.6138 44.0138 23.5448 44.1379 24.8276 44.1379C26.3225 44.1367 27.7005 43.3292 28.4323 42.0257C29.1642 40.7221 29.136 39.1252 28.3586 37.8483C27.531 36.469 26.4965 36.2207 23.0759 34.4966L18.3586 32.1379C17.1767 31.5495 16.3466 30.4324 16.1241 29.131L8.88275 22.6621Z"
+                                fill="#3F5C6C" />
+                        </g>
+                        <g id="helmet">
+                            <path id="helmetBase"
+                                d="M6.89655 15.1724C6.89655 23.5519 13.6895 30.3448 22.069 30.3448C30.4485 30.3448 37.2414 23.5519 37.2414 15.1724C37.2414 6.79292 30.4485 0 22.069 0C13.6895 0 6.89655 6.79292 6.89655 15.1724Z"
+                                fill="#547580" />
+                            <g id="visor">
+                                <path id="visor Base"
+                                    d="M35.3241 22.5517C29.6414 26.1103 21.0759 25.4069 16.5517 21.1035C9.87587 14.8 15.9724 5.51724 26.8966 5.51724C29.863 5.47493 32.7822 6.26325 35.3241 7.79311C37.878 12.3812 37.878 17.9636 35.3241 22.5517Z"
+                                    fill="#F0C419" />
+                                <path id="visorShine"
+                                    d="M33.1034 16.5517C32.3417 16.5517 31.7241 15.9342 31.7241 15.1724C31.7241 11.0345 26.4276 11.0345 26.2069 11.0345C25.4451 11.0345 24.8276 10.4169 24.8276 9.65516C24.8276 8.89339 25.4451 8.27585 26.2069 8.27585C29.0759 8.27585 34.4827 9.72412 34.4827 15.1724C34.4827 15.9342 33.8652 16.5517 33.1034 16.5517Z"
+                                    fill="#F9EAB0" />
+                                <path id="visorShadow"
+                                    d="M36.6759 19.3104C36.3485 20.4512 35.8854 21.5487 35.2965 22.5793C31.2387 24.9404 26.3809 25.5051 21.8896 24.1379C14.869 22.0138 11.8758 16 14.9931 11.1448C19.3793 16.2621 26.4138 21.1173 36.6759 19.3104Z"
+                                    fill="#F29C1F" />
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="about-section-top-fade"></div>
+        <div class="glass-sphere-1"></div>
+        <div class="glass-sphere-2"></div>
+
+        <div class="container about-container">
+            <div class="about-image-col">
+                <img src="assets/images/logo.png" alt="PixelGuy Mascot" class="about-large-logo">
+            </div>
+            <div class="about-text-col">
+                <h2 class="modern-dark-title">Who Is This Guy?</h2>
+                <p class="lead-text">Welcome to Pixel Guy — your tech-savvy, one-stop shop.</p>
+                <p>Before the rumors travel too far, let's clarify: we don't sell aliens, superheroes, time machines, or
+                    intergalactic gadgets. We checked. Still out of stock. What is available is a solid lineup of home &
+                    garden, consumer electronics, home appliances, restaurant supplies, and practical essentials that
+                    actually work.</p>
+                <p>At Pixel Guy, we believe online shopping shouldn't feel like a guessing game. You shouldn't need a
+                    decoder ring to read product descriptions or special training to plug something in. That's why we
+                    keep things straightforward: honest listings, fair pricing, reliable shipping, and real human
+                    support.</p>
+                <p>We hand-pick products that save time, reduce headaches, and quietly make you think, "Why didn't I buy
+                    this sooner?" If it's useful, dependable, and won't end up lost in a drawer somewhere, it's Pixel
+                    Guy-approved.</p>
+                <p>Whether you're upgrading your home, running a business, or just trying to make daily tasks run a
+                    little smoother, Pixel Guy has you covered.</p>
+                <p class="tagline">ONE STOP. ONE GUY. PIXEL GUY.</p>
+            </div>
+        </div>
+        <div class="section-yellow-end" aria-hidden="true"></div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TOP SIGNALS (FEATURED PRODUCTS)            -->
+    <!-- ========================================== -->
+    <section class="signals-section section-padding bg-light" style="position: relative;">
+        <span id="signals" style="position: absolute; top: -150px; visibility: hidden; pointer-events: none;"></span>
+        <div class="container text-center">
+            <h2 class="modern-dark-title">Top Signals</h2>
+            <p class="section-subtitle">These products are lighting up our radar. Popular, proven, and frequently
+                requested by fellow Earthlings—if it's trending here, it's because it actually works.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="assets/TopSignalsItems/TS_Laptop.png" alt="Laptop" class="product-image">
+                    <h4>Laptop</h4>
+                    <a href="#" class="btn-outline">View Signal</a>
+                </div>
+                <div class="product-card">
+                    <img src="assets/TopSignalsItems/TS_Watch.png" alt="Watch" class="product-image">
+                    <h4>Watch</h4>
+                    <a href="#" class="btn-outline">View Signal</a>
+                </div>
+                <div class="product-card">
+                    <img src="assets/TopSignalsItems/TS_Mobile.png" alt="Mobile" class="product-image">
+                    <h4>Mobile</h4>
+                    <a href="#" class="btn-outline">View Signal</a>
+                </div>
+            </div>
+        </div>
+        <div class="section-yellow-end" aria-hidden="true"></div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- STAR MAP (SOCIAL LINKS)                    -->
+    <!-- ========================================== -->
+    <section class="star-map-section" id="star-map">
+        <div class="starmap-moon-container">
+            <div class="glowing-moon"></div>
+        </div>
+        <div class="star-glow"></div>
+
+        <div class="container">
+            <h2 class="modern-dark-title">Star Map</h2>
+            <p class="section-subtitle">Looking for Pixel Guy? This star map will guide you straight to our digital and
+                real-world presence. No warp drive, wormholes, or secret handshakes required.</p>
+
+            <div class="social-links-grid">
+
+                <!-- AMAZON -->
+                <div class="social-item">
+                    <a href="#" class="social-icon glass-card">
+                        <!-- FIXED: fa-brands fa-amazon (FA6 syntax) -->
+                        <i class="fa-brands fa-amazon"></i>
+                    </a>
+                    <span class="social-label">Amazon</span>
+                </div>
+
+                <!-- EBAY -->
+                <div class="social-item">
+                    <a href="#" class="social-icon glass-card">
+                        <!-- FIXED: fa-brands fa-ebay (FA6 syntax) -->
+                        <i class="fa-brands fa-ebay"></i>
+                    </a>
+                    <span class="social-label">eBay</span>
+                </div>
+
+                <!-- WALMART — uses inline SVG spark logo (no FA icon exists) -->
+                <div class="social-item">
+                    <a href="#" class="social-icon glass-card">
+                        <svg viewBox="0 0 100 100" style="width: 50px; height: 50px;"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g fill="#FFC220" transform="translate(50,50)">
+                                <rect x="-6" y="-45" width="12" height="28" rx="6" ry="6" />
+                                <rect x="-6" y="-45" width="12" height="28" rx="6" ry="6" transform="rotate(60)" />
+                                <rect x="-6" y="-45" width="12" height="28" rx="6" ry="6" transform="rotate(120)" />
+                                <rect x="-6" y="-45" width="12" height="28" rx="6" ry="6" transform="rotate(180)" />
+                                <rect x="-6" y="-45" width="12" height="28" rx="6" ry="6" transform="rotate(240)" />
+                                <rect x="-6" y="-45" width="12" height="28" rx="6" ry="6" transform="rotate(300)" />
+                            </g>
+                        </svg>
+                    </a>
+                    <span class="social-label">Walmart</span>
+                </div>
+
+                <!-- INSTAGRAM -->
+                <div class="social-item">
+                    <a href="#" class="social-icon glass-card">
+                        <!-- FIXED: fa-brands fa-instagram (FA6 syntax) -->
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span class="social-label">Instagram</span>
+                </div>
+
+                <!-- FACEBOOK -->
+                <div class="social-item">
+                    <a href="#" class="social-icon glass-card">
+                        <!-- FIXED: fa-brands fa-facebook-f (FA6 syntax) -->
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <span class="social-label">Facebook</span>
+                </div>
+
+                <!-- TIKTOK -->
+                <div class="social-item">
+                    <a href="#" class="social-icon glass-card">
+                        <!-- FIXED: fa-brands fa-tiktok — ONLY exists in FA6, not FA5 -->
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <span class="social-label">TikTok</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-yellow-end" aria-hidden="true"></div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PLANET EARTH COORDINATES                   -->
+    <!-- ========================================== -->
+    <section class="coordinates-section" id="coordinates">
+        <div class="container">
+            <h2 class="section-title">Planet Earth Coordinates</h2>
+            <p class="section-subtitle">Our terrestrial headquarters located in Carrollton.</p>
+
+            <div class="astronaut-wrapper left">
+                <div id="lottie-left" class="lottie-anim"></div>
+            </div>
+
+            <div class="coordinates-card premium-dark-card">
+                <div class="globe-column">
+                    <div class="earth-track">
+                        <div id="earth"></div>
+                    </div>
+                </div>
+                <div class="address-column">
+                    <div class="tech-badge">
+                        <span class="pulse-dot"></span> HQ STATUS: ONLINE
+                    </div>
+                    <h3 class="hq-title">PIXEL GUY HQ</h3>
+                    <ul class="modern-address-list">
+                        <!-- FIXED: fa-solid prefix (FA6 syntax) -->
+                        <li><i class="fa-solid fa-location-dot"></i> 1911 Old Denton Rd, Ste B</li>
+                        <li><i class="fa-solid fa-city"></i> Carrollton, TX 75006</li>
+                        <li><i class="fa-solid fa-earth-americas"></i> Planet Earth</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="astronaut-wrapper right">
+                <div id="lottie-right" class="lottie-anim"></div>
+            </div>
+        </div>
+        <div class="section-yellow-end" aria-hidden="true"></div>
+    </section>
+
+    <script>
+        (function () {
+            if (typeof lottie === 'undefined') return;
+            var config = {
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'assets/animations/spaceman.json',
+                rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid meet',
+                    progressiveLoad: true
+                }
+            };
+            var left = lottie.loadAnimation(Object.assign({}, config, { container: document.getElementById('lottie-left') }));
+            var right = lottie.loadAnimation(Object.assign({}, config, { container: document.getElementById('lottie-right') }));
+            left.setSpeed(0.8);
+            right.setSpeed(0.8);
+            var section = document.getElementById('coordinates');
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) { left.play(); right.play(); }
+                        else { left.pause(); right.pause(); }
+                    });
+                }, { threshold: 0.1 });
+                observer.observe(section);
+            }
+        })();
+    </script>
+
+    <!-- ========================================== -->
+    <!-- TRANSMISSION SECTION (CONTACT FORM)        -->
+    <!-- ========================================== -->
+    <section class="transmission-section" id="transmission">
+        <div class="container" style="position: relative; max-width: 1200px; margin: 0 auto;">
+            <h2 class="modern-dark-title">Send A Transmission</h2>
+            <p class="section-subtitle">Communication channels remain open for all Earthling inquiries.</p>
+
+            <div id="rocket-left" class="rocket-container left"></div>
+
+            <div class="transmission-card">
+                <form class="transmission-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="IDENTITY (NAME)" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="COMM-CHANNEL (EMAIL)" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea rows="4" placeholder="MESSAGE ENCRYPTION..." required></textarea>
+                    </div>
+                    <button type="submit" class="space-btn">Transmit Message</button>
+                </form>
+            </div>
+
+            <div id="rocket-right" class="rocket-container right"></div>
+        </div>
+        <div class="section-yellow-end" aria-hidden="true"></div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FOOTER SECTION                             -->
+    <!-- ========================================== -->
+    <footer class="main-footer">
+        <div class="footer-frosted-card">
+            <div class="footer-container">
+
+                <div class="footer-brand">
+                    <img src="assets/images/logo.png" alt="PixelGuy Logo" class="footer-logo">
+                </div>
+
+                <div class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">Who Is This Guy?</a>
+                    <a href="#signals">Top Signals</a>
+                    <a href="#star-map">Star Map</a>
+                    <a href="#coordinates">Planet Earth Coordinates</a>
+                    <a href="#transmission">Send A Transmission</a>
+                </div>
+
+                <div class="footer-contact">
+                    <!-- FIXED: fa-solid prefix (FA6 syntax) -->
+
+                    <p><i class="fa-solid fa-phone"></i> (214) 830-4878</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 1911 Old Denton Rd Ste B, Carrollton, TX<br>75006</p>
+                    <p><i class="fa-solid fa-envelope"></i> teampixelguy@gmail.com</p>
+                </div>
+
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2026 PixelGuy Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script type="module" src="js/rocket-anim.js"></script>
+
+</body>
+
+</html>

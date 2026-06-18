@@ -1,0 +1,84 @@
+/* ==========================================
+   GLOBAL FIX: Prevents white browser background
+   ========================================== */
+html, body {
+    background-color: #d0d4dc;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+}
+
+/* ==========================================
+   GLOBAL RESET
+   Removes default browser spacing
+   ========================================== */
+* {
+    margin: 0;
+  ;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* A reusable container to keep content centered and not too wide */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   Header-like button styles applied to other
+   sections: Top Signals, Transmission, Footer
+   Matches `.main-nav a` hover behavior without
+   any glowing/outer-glow effects.
+   ========================================== */
+.header-like-btn,
+.signals-section .btn-outline,
+.transmission-section .space-btn {
+    text-decoration: none;
+    color: #ffffff !important;
+    font-weight: 900;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 10px 16px;
+    border-radius: 50px;
+    white-space: nowrap;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: transparent;
+}
+
+.header-like-btn:hover,
+.signals-section .btn-outline:hover,
+.transmission-section .space-btn:hover {
+    color: #0b0f19 !important;
+    background-color: #FFCC00 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    text-shadow: none;
+}
+
+/* Footer links: keep original base color so they're visible on light background,
+   but apply the same hover appearance as header links */
+.footer-nav a,
+.footer-contact a {
+    color: #3d5a80;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    padding: 10px 16px;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: transparent;
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover {
+    color: #0b0f19;
+    background-color: #FFCC00;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    text-shadow: none;
+}
+

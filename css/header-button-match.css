@@ -1,0 +1,39 @@
+/* ==========================================
+   HEADER BUTTON HOVER — exact .main-nav a match
+   Applied to all site buttons (no changes)
+   ========================================== */
+
+.signals-section .btn-outline,
+.space-btn,
+.footer-nav a {
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-radius: 50px;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.signals-section .btn-outline:hover,
+.space-btn:hover,
+.footer-nav a:hover {
+    color: #0b0f19 !important;
+    background-color: #FFCC00 !important;
+    -webkit-text-fill-color: #0b0f19 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-2px) !important;
+    text-shadow: none !important;
+    border-color: transparent !important;
+}
+
+/* Footer: use header pill hover, not slide/chevron */
+.footer-nav a:hover::before {
+    opacity: 0 !important;
+}
+
+.footer-nav a::before {
+    display: none;
+}

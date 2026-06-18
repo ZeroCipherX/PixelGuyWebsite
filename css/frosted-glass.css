@@ -1,0 +1,232 @@
+/* ==========================================
+   REFERENCE GLASSMORPHISM — clear transparent glass
+   Sharp clarity · no blur · crisp reflections · real glass feel
+   ========================================== */
+
+.about-container,
+.product-card,
+.social-icon.glass-card,
+.coordinates-card.premium-dark-card,
+.transmission-card,
+.footer-frosted-card,
+.modern-dark-title,
+.coordinates-section .section-title,
+.transmission-section .input-group input,
+.transmission-section .input-group textarea {
+    position: relative;
+    overflow: hidden;
+
+    /* Clear glass — see-through with subtle tint, NO frosting */
+    background: linear-gradient(
+        165deg,
+        rgba(255, 255, 255, 0.18) 0%,
+        rgba(255, 255, 255, 0.08) 40%,
+        rgba(255, 255, 255, 0.03) 100%
+    ) !important;
+
+    /* NO blur — crystal clear glass */
+    backdrop-filter: saturate(120%) !important;
+    -webkit-backdrop-filter: saturate(120%) !important;
+
+    /* Crisp glass edge — thin bright rim */
+    border: 1px solid rgba(255, 255, 255, 0.50) !important;
+
+    /* Realistic glass shadow: outer depth + inner edge highlights */
+    box-shadow:
+        0 8px 32px rgba(60, 72, 95, 0.12),
+        0 2px 8px rgba(60, 72, 95, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.25),
+        inset 1px 0 0 rgba(255, 255, 255, 0.30),
+        inset -1px 0 0 rgba(255, 255, 255, 0.10) !important;
+
+    isolation: isolate;
+}
+
+/* Crisp surface highlight — sharp top-left light reflection */
+.about-container::after,
+.product-card::after,
+.social-icon.glass-card::after,
+.coordinates-card.premium-dark-card::after,
+.transmission-card::after,
+.modern-dark-title::after,
+.coordinates-section .section-title::after,
+.footer-frosted-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 80% 50% at 20% 0%,
+            rgba(255, 255, 255, 0.40) 0%,
+            rgba(255, 255, 255, 0.08) 35%,
+            transparent 65%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            transparent 30%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Bottom-edge bright lip — glass thickness indicator */
+.about-container::before,
+.product-card::before,
+.social-icon.glass-card::before,
+.coordinates-card.premium-dark-card::before,
+.transmission-card::before,
+.modern-dark-title::before,
+.coordinates-section .section-title::before,
+.footer-frosted-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.35) 20%,
+        rgba(255, 255, 255, 0.70) 50%,
+        rgba(255, 255, 255, 0.35) 80%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Outline reset */
+.about-container,
+.product-card,
+.social-icon.glass-card,
+.coordinates-card.premium-dark-card,
+.transmission-card,
+.modern-dark-title,
+.coordinates-section .section-title,
+.footer-frosted-card {
+    outline: none;
+}
+
+/* Circular icons — centered radial highlight */
+.social-icon.glass-card::after {
+    background:
+        radial-gradient(
+            ellipse 70% 50% at 50% 8%,
+            rgba(255, 255, 255, 0.45) 0%,
+            rgba(255, 255, 255, 0.08) 40%,
+            transparent 65%
+        );
+}
+
+/* Transmission yellow tab — sits above glass lips */
+.transmission-card::before {
+    top: 0;
+    bottom: auto;
+    left: 50px;
+    right: auto;
+    width: 100px;
+    height: 4px;
+    background: #FFCC00;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.35);
+}
+
+/* Content above glass layers */
+.about-container > *,
+.product-card > *,
+.coordinates-card.premium-dark-card > *,
+.transmission-card > *,
+.social-icon.glass-card > * {
+    position: relative;
+    z-index: 3;
+}
+
+.modern-dark-title,
+.coordinates-section .section-title {
+    z-index: 1;
+}
+
+/* Readable text on transparent glass */
+.about-text-col p,
+.about-text-col .lead-text,
+.product-card h4,
+.coordinates-section .hq-title,
+.coordinates-section .modern-address-list li,
+.transmission-section .input-group input,
+.transmission-section .input-group textarea,
+.modern-dark-title,
+.coordinates-section .section-title {
+    color: #2c3e5a !important;
+    -webkit-text-fill-color: #2c3e5a !important;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.60);
+    position: relative;
+    z-index: 3;
+}
+
+.about-text-col .tagline {
+    position: relative;
+    z-index: 3;
+}
+
+/* Form fields — slightly more opaque for readability when typing */
+.transmission-section .input-group input,
+.transmission-section .input-group textarea {
+    background: linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.22) 0%,
+        rgba(255, 255, 255, 0.08) 100%
+    ) !important;
+    backdrop-filter: saturate(110%) !important;
+    -webkit-backdrop-filter: saturate(110%) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.65),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+.transmission-section .input-group input:focus,
+.transmission-section .input-group textarea:focus {
+    background: linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.30) 0%,
+        rgba(255, 255, 255, 0.12) 100%
+    ) !important;
+    border-color: rgba(255, 204, 0, 0.70) !important;
+    box-shadow:
+        0 4px 16px rgba(255, 204, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.80),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Hover — glass lifts, shadow deepens */
+.about-container:hover,
+.product-card:hover,
+.social-item:hover .social-icon.glass-card,
+.coordinates-card.premium-dark-card:hover,
+.transmission-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 16px 48px rgba(60, 72, 95, 0.18),
+        0 6px 16px rgba(60, 72, 95, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.90),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.30),
+        inset 1px 0 0 rgba(255, 255, 255, 0.35),
+        inset -1px 0 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+.transmission-card:hover {
+    animation-play-state: paused;
+}
+
+.social-item:hover .social-icon.glass-card {
+    transform: translateY(-8px);
+}
+
+/* Override section files that hide glass pseudo-elements */
+.coordinates-section .section-title::after,
+.coordinates-section .section-title::before {
+    display: block !important;
+}
