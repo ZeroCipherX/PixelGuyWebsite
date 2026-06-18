@@ -371,17 +371,17 @@
                 <div class="product-card">
                     <img src="assets/TopSignalsItems/TS_Laptop.png" alt="Laptop" class="product-image">
                     <h4>Laptop</h4>
-                    <a href="#" class="btn-outline">View Signal</a>
+                    <a href="javascript:void(0)" class="btn-outline">View Signal</a> <!-- REPLACE javascript:void(0) WITH YOUR PRODUCT LINK -->
                 </div>
                 <div class="product-card">
                     <img src="assets/TopSignalsItems/TS_Watch.png" alt="Watch" class="product-image">
                     <h4>Watch</h4>
-                    <a href="#" class="btn-outline">View Signal</a>
+                    <a href="javascript:void(0)" class="btn-outline">View Signal</a> <!-- REPLACE javascript:void(0) WITH YOUR PRODUCT LINK -->
                 </div>
                 <div class="product-card">
                     <img src="assets/TopSignalsItems/TS_Mobile.png" alt="Mobile" class="product-image">
                     <h4>Mobile</h4>
-                    <a href="#" class="btn-outline">View Signal</a>
+                    <a href="javascript:void(0)" class="btn-outline">View Signal</a> <!-- REPLACE javascript:void(0) WITH YOUR PRODUCT LINK -->
                 </div>
             </div>
         </div>
@@ -572,7 +572,7 @@
         <button type="submit" class="space-btn">Transmit Message</button>
     </form>
 
-    <div id="thank-you-message" class="thank-you-message">
+    <div id="thank-you-message" class="thank-you-message" style="display: none !important;">
         <h3 class="thank-you-title">TRANSMISSION RECEIVED</h3>
         <p class="thank-you-text">Thank you. Your message has been safely delivered to Pixel Guy HQ.</p>
     </div>
@@ -593,7 +593,7 @@
             if (response.ok) {
                 // If successful, hide the form and show the message
                 this.style.display = 'none'; 
-                document.getElementById("thank-you-message").style.display = 'block';
+                document.getElementById("thank-you-message").style.setProperty('display', 'block', 'important');
             } else {
                 alert("Transmission failed. Please try again.");
             }
