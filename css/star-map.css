@@ -76,6 +76,15 @@
     isolation: isolate;
 }
 
+/* Wrapping <a> for items with real links — makes icon + label fully clickable */
+.social-link-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
 .social-item:nth-child(1) { animation-delay: 0.0s; }
 .social-item:nth-child(2) { animation-delay: 0.4s; }
 .social-item:nth-child(3) { animation-delay: 0.8s; }
