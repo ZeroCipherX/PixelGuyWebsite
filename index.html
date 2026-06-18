@@ -552,18 +552,52 @@
             <div id="rocket-left" class="rocket-container left"></div>
 
             <div class="transmission-card">
-                <form class="transmission-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="IDENTITY (NAME)" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" placeholder="COMM-CHANNEL (EMAIL)" required>
-                    </div>
-                    <div class="input-group">
-                        <textarea rows="4" placeholder="MESSAGE ENCRYPTION..." required></textarea>
-                    </div>
-                    <button type="submit" class="space-btn">Transmit Message</button>
-                </form>
+               <div class="form-wrapper">
+    <form class="transmission-form" id="contact-form" action="https://formsubmit.co/teampixelguy@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <div class="input-group">
+            <input type="text" name="name" placeholder="IDENTITY (NAME)" required>
+        </div>
+        <div class="input-group">
+            <input type="email" name="email" placeholder="COMM-CHANNEL (EMAIL)" required>
+        </div>
+        <div class="input-group">
+            <textarea name="message" rows="4" placeholder="MESSAGE ENCRYPTION..." required></textarea>
+        </div>
+        <button type="submit" class="space-btn">Transmit Message</button>
+    </form>
+
+    <div id="thank-you-message" class="thank-you-message">
+        <h3 class="thank-you-title">TRANSMISSION RECEIVED</h3>
+        <p class="thank-you-text">Thank you. Your message has been safely delivered to Pixel Guy HQ.</p>
+    </div>
+</div>
+
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Stop the page from redirecting
+        
+        // Send the data silently in the background
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // If successful, hide the form and show the message
+                this.style.display = 'none'; 
+                document.getElementById("thank-you-message").style.display = 'block';
+            } else {
+                alert("Transmission failed. Please try again.");
+            }
+        }).catch(error => {
+            alert("Transmission failed. Please try again.");
+        });
+    });
+</script>
             </div>
 
             <div id="rocket-right" class="rocket-container right"></div>
